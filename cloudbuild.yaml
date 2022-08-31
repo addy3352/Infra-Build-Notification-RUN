@@ -1,0 +1,19 @@
+# setup Terraform using public terraform Docker image
+steps:
+- id: terraform-init-dev
+  name: 'hashicorp/terraform'
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - |
+      export GOOGLE_IMPERSONATE_SERVICE_ACCOUNT=cloud-saude-terraform@data-project-dev-314214.iam.gserviceaccount.com
+      terraform init -reconfigure
+# deploy the required GCP resources
+
+- id: terraform-apply-dev
+  name: 'hashicorp/terraform'
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - |
+      terraform apply -auto-approve -lock=false 
