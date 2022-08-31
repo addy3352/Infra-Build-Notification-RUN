@@ -6,7 +6,7 @@ steps:
   args: 
   - '-c'
   - |
-      export GOOGLE_IMPERSONATE_SERVICE_ACCOUNT=cloud-saude-terraform@data-project-dev-314214.iam.gserviceaccount.com
+      export GOOGLE_IMPERSONATE_SERVICE_ACCOUNT=<impersonate service account>
       terraform init -reconfigure
 # deploy the required GCP resources
 
