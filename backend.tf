@@ -2,8 +2,8 @@
 ##
 terraform {
   backend "gcs" {
-    bucket = "data-project-dev-314214-tfstate"
+    bucket = "${var.project}-tfstate"
     prefix = "env/dev"
-    impersonate_service_account = "cloud-saude-terraform@data-project-dev-314214.iam.gserviceaccount.com"
+    impersonate_service_account = "enter impersonate service account email "
   }
 }
